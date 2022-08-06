@@ -1,8 +1,7 @@
-﻿static string Scan() => Console.ReadLine();
-
-static string ShowColor()
+﻿static string ShowColor(string username, int userage)
 {
-	Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
+	Console.WriteLine("{0}, {1} лет \nНапишите свой любимый цвет", username, userage);
+
 	var color = Console.ReadLine();
 
 	if (color != null)
@@ -56,39 +55,28 @@ static string ShowColor()
 	return "0";
 }
 
-static int[] Sort()
+static void ShowFavColors(params string[] favcolors)
 {
-	var result = new int[5];
-	var temp = 0;
-
-	for (int i = 0; i < result.Length; i++)
-    {
-		Console.WriteLine("Введите элемент массива номер {0}", i + 1);
-		result[i] = int.Parse(Scan());
-    }
-
-	Console.WriteLine();
-
-	for (int i = 0; i < result.Length; i++)
+	Console.WriteLine("Ваши любимые цвета:");
+	foreach (var color in favcolors)
 	{
-		for (int j = i + 1; j < result.Length; j++)
-		{
-			if (result[j] <= result[i])
-			{
-				temp = result[i];
-				result[i] = result[j];
-				result[j] = temp;
-			}
-		}
+		Console.WriteLine(color);
 	}
-
-
-	foreach (var item in result)
-    {
-		Console.WriteLine(item);
-    }
-
-	return result;
 }
 
-Sort();
+(string name, int age) anketa;
+
+Console.Write("Укажите свое имя: ");
+anketa.name = Console.ReadLine();
+Console.Write("Укажите свой возраст: ");
+anketa.age = checked(int.Parse(Console.ReadLine()));
+
+var favcolors = new string[3];
+
+for (int i = 0; i < 3; i++)
+{
+	favcolors[i] = ShowColor(anketa.name, anketa.age);
+}
+
+ShowFavColors();
+
