@@ -5,8 +5,7 @@
 
 }
 
-var name = Console.ReadLine();
-Console.WriteLine(name);
+string name = Console.ReadLine();
 
 GetName(name);
 Console.WriteLine(name);

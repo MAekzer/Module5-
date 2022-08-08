@@ -1,6 +1,4 @@
-﻿static string Scan() => Console.ReadLine();
-
-static int[] GetArray(int num = 5)
+﻿static int[] GetArray(int num = 5)
 {
 	var array = new int[num];
 	for (int i = 0; i < array.Length; i++)
@@ -13,7 +11,7 @@ static int[] GetArray(int num = 5)
 
 static int[] SortArray(int[] array)
 {
-	var temp = 0;
+	int temp;
 
 	for (int i = 0; i < array.Length; i++)
 	{
